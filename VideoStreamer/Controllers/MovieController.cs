@@ -25,7 +25,6 @@ namespace VideoStreamer.Controllers
             System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(@"Z:\");
             IList<MovieDirectory> movieDirectories = getMovieDirectories(dir);
 
-
             return View(movieDirectories);
         }
 

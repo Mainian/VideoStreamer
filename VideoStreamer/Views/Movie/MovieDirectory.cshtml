@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<VideoStreamer.Models.MovieDirectory>
 
 @{
-    ViewBag.Title = "MovieDirectory";
+    ViewBag.Title = "Movie List";
 }
+
 
 <h2>MovieDirectory</h2>
 
@@ -23,9 +24,11 @@
             {
                 <tr>
                     <td>
-                    @movie.Title
+                        @movie.Title
+                        <get>@Html.ActionLink("Watch Video","Get","VideoStream")</get>
                     </td>
                 </tr>
+                
             }
             </table>
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })

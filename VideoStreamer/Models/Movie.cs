@@ -10,5 +10,6 @@ namespace VideoStreamer.Models
         public string Title { get; set; }
         public string FullName { get; set; }
         public float Rating { get; set; }
+        public string Ext { get; set; }
     }
 }

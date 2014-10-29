@@ -11,10 +11,30 @@ namespace VideoStreamer.Models
     public class VideoStream
     {
         private readonly string _filename;
+        private readonly string _filepath;
+        private readonly string _ext;
 
         public VideoStream(string filepath, string ext)
         {
+            _filepath = @filepath;
+            _ext = @ext;
             _filename = @filepath + "." + ext;
+        }
+
+        public string FilePath
+        {
+            get
+            {
+                return _filepath;
+            }
+        }
+
+        public string Ext
+        {
+            get
+            {
+                return _ext;
+            }
         }
 
         public async void WriteToStream(Stream outputStream, HttpContent content, TransportContext context)

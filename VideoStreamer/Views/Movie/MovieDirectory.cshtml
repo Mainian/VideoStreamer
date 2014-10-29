@@ -7,9 +7,6 @@
 
 <h2>MovieDirectory</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table>
     <tr>
         <th></th>
@@ -25,7 +22,7 @@
                 <tr>
                     <td>
                         @movie.Title
-                        <get>@Html.ActionLink("Watch Video","Get","VideoStream")</get>
+                        @Html.ActionLink("Watch Video", "GetVideoStream", "VideoStream", routeValues: new { filepath = movie.FullName, ext = movie.Ext }, htmlAttributes: null);
                     </td>
                 </tr>
                 

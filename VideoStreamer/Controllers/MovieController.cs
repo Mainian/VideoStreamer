@@ -169,8 +169,9 @@ namespace VideoStreamer.Controllers
                 {
                     Movie movie = new Movie();
                     movie.Title = info.Name;
+                    //string[] vals = info.FullName.Split('\\');
                     movie.FullName = info.FullName;
-
+                    movie.Ext = info.Extension.ToLower().Substring(1);
                     movies.Add(movie);
                 }
             }

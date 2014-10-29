@@ -291,6 +291,7 @@
     <Content Include="Views\Movie\MovieDirectory.cshtml" />
     <Content Include="Views\Video\VideoStream.cshtml" />
     <Content Include="Views\VideoStream\Get.cshtml" />
+    <Content Include="Views\VideoStream\GetVideoStream.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

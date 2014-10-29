@@ -1,0 +1,14 @@
+﻿@model VideoStreamer.Models.VideoStream
+
+@{
+    ViewBag.Title = "GetVideoStream";
+}
+
+<h2>GetVideoStream</h2>
+<html>
+<body>
+    <video width="480" height="320" controls="controls" autoplay="autoplay">
+        <source src="@Model.FilePath" type="video/mp4">
+    </video>
+</body>
+</html>

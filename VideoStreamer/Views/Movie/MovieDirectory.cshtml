@@ -22,13 +22,13 @@
                 <tr>
                     <td>
                         @movie.Title
-                        @Html.ActionLink("Watch Video", "GetVideoStream", "VideoStream", routeValues: new { filepath = movie.FullName, ext = movie.Ext }, htmlAttributes: null);
+                        @Html.ActionLink("Watch Video", "Index", "Video", routeValues: new { filepath = movie.FullName, name = movie.Title }, htmlAttributes: null);
+                        @*@Html.ActionLink("Watch Video", "GetVideoStream", "VideoStream", routeValues: new { filepath = movie.FullName, ext = movie.Ext }, htmlAttributes: null)*@;
                     </td>
                 </tr>
                 
             }
             </table>
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }

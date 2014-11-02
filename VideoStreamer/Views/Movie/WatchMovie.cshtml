@@ -4,6 +4,13 @@
     ViewBag.Title = "WatchMovie";
 }
 
-<video width="320" height="240" controls autoplay="autoplay"> 
-  <source src="@Url.Action("Index","Video", routeValues: new { filepath = @Model.FullName, name = @Model.Title })" type="video/mp4"> 
+<video width="480" height="320" controls autoplay="autoplay">
+    <source src="/api/videos/@Model.Ext/'@Model.FullNameNoSpecials()'" type ="video/@Model.Ext" />
+    @*<source src="@Url.HttpRouteUrl("DefaultVideo", new { controller = "videostream", ext = @Model.Ext, filepath = @Model.FullName})", type="video/@Model.Ext" />*@
+    @*<source src="/api/VideoStream/@Model.Ext/@Model.Title", type="video/@Model.Ext" />*@
 </video>
+
+
+@*<video width="480" height="320" controls autoplay="autoplay"> 
+  <source src="@Url.Action("Index","Video", routeValues: new { filepath = @Model.FullName, name = @Model.Title })" type="video/mp4"> 
+</video>*@

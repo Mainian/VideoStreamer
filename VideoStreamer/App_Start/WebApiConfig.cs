@@ -14,6 +14,15 @@ namespace VideoStreamer
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //    config.Routes.MapHttpRoute(
+            //        name: "DefaultVideo",
+            //        routeTemplate: "api/{controller}/{ext}/{filepath}");
+            //}
+            config.Routes.MapHttpRoute(
+                name: "DefaultVideo",
+                routeTemplate: "api/{controller}/{ext}/'{filename}'"
+            );
         }
     }
 }

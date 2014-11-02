@@ -16,9 +16,11 @@ namespace VideoStreamer.Models
 
         public VideoStream(string filepath, string ext)
         {
-            _filepath = @filepath;
+            Movie movie = new Movie(filepath);
+            _filepath = movie.FullName;
             _ext = @ext;
-            _filename = @filepath + "." + ext;
+            //_filename = movie.FullName+"."+ext;
+            _filename = movie.FullName;
         }
 
         public string FilePath

@@ -1,0 +1,9 @@
+﻿@model VideoStreamer.Models.Movie
+
+@{
+    ViewBag.Title = "WatchMovie";
+}
+
+<video width="320" height="240" controls autoplay="autoplay"> 
+  <source src="@Url.Action("Index","Video", routeValues: new { filepath = @Model.FullName, name = @Model.Title })" type="video/mp4"> 
+</video>

@@ -28,6 +28,11 @@ namespace VideoStreamer.Controllers
             return View(movieDirectories);
         }
 
+        public ActionResult WatchMovie(string fullPath)
+        {
+            return View(getMovie(fullPath));
+        }
+
         //
         // GET: /Movie/Details/5
 
@@ -114,6 +119,17 @@ namespace VideoStreamer.Controllers
             }
         }
 
+        private Movie getMovie(string fullPath)
+        {
+            System.IO.FileInfo info = new System.IO.FileInfo(fullPath);
+            Movie movie = new Movie();
+            movie.Title = info.Name;
+            movie.FullName = info.FullName;
+            movie.Ext = info.Extension.ToLower().Substring(1);
+
+            return movie;
+        }
+
         private IList<MovieDirectory> getMovieDirectories(System.IO.DirectoryInfo dir)
         {
             IList<Movie> movies = getMovies(dir);
@@ -136,20 +152,6 @@ namespace VideoStreamer.Controllers
                 
             }
 
-            //for (int i = 0; i < 256; i++)
-            //{
-            //    var mov = movies.Where(x => x.Title[0] == (char)i);
-            //    if(mov.Count() > 0)
-            //    {
-            //        MovieDirectory directory = new MovieDirectory();
-            //        directory.Name = (char)i;
-            //        foreach (Movie m in mov)
-            //            directory.Movies.Add(m);
-
-            //        directories.Add(directory);
-            //    }
-            //}
-
             return directories;
 
         }
@@ -169,7 +171,6 @@ namespace VideoStreamer.Controllers
                 {
                     Movie movie = new Movie();
                     movie.Title = info.Name;
-                    //string[] vals = info.FullName.Split('\\');
                     movie.FullName = info.FullName;
                     movie.Ext = info.Extension.ToLower().Substring(1);
                     movies.Add(movie);

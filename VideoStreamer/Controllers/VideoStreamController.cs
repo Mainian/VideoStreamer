@@ -34,5 +34,10 @@ namespace VideoStreamer.Controllers
             //return Json(new PushStreamContent(video.WriteToStream, new System.Net.Http.Headers.MediaTypeHeaderValue("video/" + ext)), JsonRequestBehavior.AllowGet);
             return View(video);
         }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
     }
 }

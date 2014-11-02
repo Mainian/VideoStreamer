@@ -18,7 +18,8 @@ namespace VideoStreamer.Controllers
 
         public ActionResult Index(string filepath, string name)
         {
-            return View(new VideoResult(filepath, name));
+            return new VideoResult(filepath, name);
+            //return View(new VideoResult(filepath, name));
         }
     }
 }
